@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Recipe Finder — サイトについて</title>
+<link rel="stylesheet" href="./styles/about.css">
+</head>
+<body>
+<header class="site-header">
+<div class="container header-inner">
+<a class="logo" href="index.html" aria-label="Recipe Finder ホームへ">Recipe Finder</a>
+<nav class="global-nav" aria-label="グローバルナビゲーション">
+<a href="index.html">ホーム</a>
+<a href="./recipeFinder.html">レシピ</a>
+<a href="./recipeCollection.html">レシピコレクション</a>
+<a href="./contact.html" class="btn-primary">お問い合わせ</a>
+</nav>
+</div>
+</header>
+<main class="container main-content">
+<section class="hero">
+<h1>Recipe Finder について</h1>
+<p class="lead">「食べたい」をすぐに見つける — レシピ検索とお気に入り保存ができる、使いやすいレシピサイトです。</p>
+<a class="home-btn" href="./recipeFinder.html">ホームページへ</a>
+</section>
+<section class="about-grid">
+<article class="card">
+<h2>ミッション</h2>
+<p>私たちは、だれでも簡単に美味しい料理に辿り着けるように、シンプルで見つけやすいレシピ検索体験を提供します。材料や調理時間、カテゴリで検索可能です。</p>
+</article>
+<article class="card">
+<h2>主な機能</h2>
+<ul>
+<li>キーワード検索（材料・料理名）</li>
+<li>カテゴリー／調理時間での絞り込み</li>
+<li>お気に入り（レシピコレクション）への保存</li>
+<li>レシピ投稿・レビュー機能（今後対応予定）</li>
+</ul>
+</article>
+<article class="card">
+<h2>使い方のヒント</h2>
+<ol>
+<li>検索バーに材料や料理名を入力して Enter を押します。</li>
+<li>表示されたレシピカードから詳細ページへ移動。</li>
+<li>気に入ったら「★お気に入り」に追加してコレクションで確認。</li>
+</ol>
+</article>
+<article class="card">
+<h2>チーム & コンタクト</h2>
+<p>Recipe Finder チーム — フロントエンド、レシピ編集、UX デザインを担当しています。ご意見・バグ報告は下記からご連絡ください。</p>
+<p><strong>お問い合わせ:</strong> <a href="mailto:contact@recipefinder.example">contact@recipefinder.example</a></p>
+</article>
+</section>
+<section class="values">
+<h2>私たちの価値観</h2>
+<p>簡潔さ・発見・共有。誰でも手軽に料理を楽しめる世界を目指しています。</p>
+</section>
+</main>
+<footer class="site-footer">
+<div class="container">
+<p>© <span id="year"></span> Recipe Finder — All rights reserved.</p>
+<p class="small"><a href="privacy.html">プライバシーポリシー</a> ・ <a href="terms.html">利用規約</a></p>
+</div>
+</footer>
+<script>
+   // フッターの年を現在年で表示
+   document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

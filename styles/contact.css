@@ -1,0 +1,157 @@
+/* contact.css - シンプルでモダンなスタイル */
+:root{
+ --bg:#f6f8fa;
+ --card:#ffffff;
+ --accent:#0077cc;
+ --text:#222;
+ --muted:#666;
+ --radius:10px;
+ --shadow: 0 6px 18px rgba(18, 38, 63, 0.08);
+ --gap:18px;
+ font-family: "Yu Gothic UI","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+ box-sizing: border-box;
+}
+*{box-sizing: inherit;}
+html,body{
+ height:100%;
+ margin:0;
+ background: linear-gradient(180deg, wheat 0%, var(--bg) 100%);
+ color:var(--text);
+ -webkit-font-smoothing:antialiased;
+ -moz-osx-font-smoothing:grayscale;
+}
+.container{
+ max-width:880px;
+ margin:40px auto;
+ padding:28px;
+}
+.page-title{
+ margin:0 0 8px 0;
+ font-size:28px;
+ letter-spacing: -0.02em;
+}
+.intro{
+ margin:0 0 20px 0;
+ color:var(--muted);
+}
+/* フォーム全体 */
+.contact-form{
+ background:var(--card);
+ border-radius:var(--radius);
+ padding:24px;
+ box-shadow:var(--shadow);
+ border:1px solid rgba(20,20,20,0.03);
+}
+/* 各行 */
+.form-row{
+ display:flex;
+ flex-direction:column;
+ margin-bottom: var(--gap);
+}
+/* ラベル */
+.form-row > label{
+ font-weight:600;
+ margin-bottom:8px;
+ font-size:14px;
+}
+.required{
+ color:#d64545;
+ margin-left:6px;
+ font-weight:700;
+ font-size:13px;
+}
+/* 入力・選択・テキストエリア */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea{
+ padding:12px 14px;
+ border-radius:8px;
+ border:1px solid #e6e9ee;
+ background:#fff;
+ font-size:15px;
+ outline:none;
+ transition: box-shadow .15s ease, border-color .15s ease;
+}
+input:focus,
+select:focus,
+textarea:focus{
+ border-color: var(--accent);
+ box-shadow: 0 6px 16px rgba(0,119,204,0.08);
+}
+/* チェックボックス行 */
+.checkbox-row{
+ flex-direction:row;
+ align-items:center;
+ gap:10px;
+ margin-bottom: var(--gap);
+}
+.checkbox-label{
+ margin:0;
+ font-weight:500;
+ font-size:14px;
+}
+/* ボタン */
+.form-actions{
+ display:flex;
+ gap:12px;
+ align-items:center;
+ margin-top:6px;
+}
+.btn-submit,
+.btn-reset{
+ padding:11px 18px;
+ border-radius:8px;
+ font-weight:700;
+ border:none;
+ cursor:pointer;
+ font-size:15px;
+}
+.btn-submit{
+ background:var(--accent);
+ color:#fff;
+ box-shadow: 0 6px 12px rgba(0,119,204,0.12);
+}
+.btn-reset{
+ background:transparent;
+ color:var(--muted);
+ border:1px solid #e6e9ee;
+}
+/* 注意書き */
+.note{
+ margin-top:14px;
+ font-size:13px;
+ color:var(--muted);
+}
+/* モバイル調整 */
+@media (max-width:600px){
+ .container{ padding:16px; margin:20px 12px;}
+ .page-title{ font-size:22px; }
+ .contact-form{ padding:18px; }
+}
+/* 視覚的な微調整 */
+input::placeholder, textarea::placeholder{
+ color:#aab3bf;
+}
+/* ホームページへボタン */
+.home-button-wrapper {
+ text-align: center;
+ margin-top: 32px;
+}
+.btn-home {
+ display: inline-block;
+ background: var(--accent);
+ color: #fff;
+ padding: 12px 24px;
+ border-radius: 8px;
+ font-weight: 700;
+ text-decoration: none;
+ font-size: 16px;
+ transition: background 0.2s, transform 0.1s ease;
+ box-shadow: 0 6px 12px rgba(0,119,204,0.15);
+}
+.btn-home:hover {
+ background: #ff9900;
+ transform: translateY(-2px);
+}

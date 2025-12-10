@@ -1,0 +1,115 @@
+/* about.css */
+/* 日本語フォントは環境に依存。必要なら @font-face や Google Fonts を追加してください */
+:root{
+ --brand: #e76f51;
+ --bg: #fafafa;
+ --card: #ffffff;
+ --text: #222;
+ --muted: #666;
+ --radius: 10px;
+ --container: 1100px;
+}
+* {
+    box-sizing: border-box;
+}
+body{
+ font-family: "Hiragino Kaku Gothic ProN","Noto Sans JP", "Yu Gothic", sans-serif;
+ margin:0;
+ color:var(--text);
+ background:var(--bg);
+ -webkit-font-smoothing:antialiased;
+ line-height:1.6;
+}
+.container{
+ max-width:var(--container);
+ margin:0 auto;
+ padding:0 20px;
+}
+/* ヘッダー */
+.site-header{
+ background:#fff;
+ border-bottom:1px solid #eee;
+ position:sticky;
+ top:0;
+ z-index:10;
+}
+.header-inner{
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ padding:14px 0;
+}
+.logo{
+ font-weight:700;
+ text-decoration:none;
+ color:var(--brand);
+ font-size:1.25rem;
+}
+.global-nav a{
+ margin-left:18px;
+ text-decoration:none;
+ color:var(--muted);
+ font-weight:500;
+}
+.global-nav a.btn-primary{
+ padding:8px 12px;
+ background:var(--brand);
+ color:#fff;
+ border-radius:6px;
+ text-decoration:none;
+}
+/* メイン */
+.main-content{ padding:36px 0 80px; }
+.hero{
+ text-align:center;
+ margin-bottom:28px;
+}
+.hero h1{ margin:0 0 8px; font-size:1.9rem; }
+.lead{ color:var(--muted); margin:0 0 14px; font-size:1.05rem; }
+.home-btn{
+ display:inline-block;
+ background:transparent;
+ border:2px solid var(--brand);
+ color:var(--brand);
+ padding:8px 14px;
+ border-radius:8px;
+ text-decoration:none;
+ font-weight:600;
+}
+/* グリッド */
+.about-grid{
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:18px;
+ margin-top:18px;
+}
+.card{
+ background:var(--card);
+ border-radius:var(--radius);
+ padding:18px;
+ box-shadow:0 6px 18px rgba(25,25,25,0.06);
+}
+.card h2{ margin-top:0; margin-bottom:8px; }
+.card ul, .card ol{ margin:0 0 0 18px; color:var(--muted); }
+/* 価値観セクション */
+.values{
+ margin-top:28px;
+ padding:18px;
+ background:linear-gradient(90deg, rgba(231,111,81,0.06), rgba(231,111,81,0.03));
+ border-radius:8px;
+}
+/* フッター */
+.site-footer{
+ background:#fff;
+ border-top:1px solid #eee;
+ padding:18px 0;
+ text-align:center;
+ color:var(--muted);
+}
+.small a{ color:var(--muted); text-decoration:none; margin:0 6px; }
+/* レスポンシブ */
+@media (max-width:880px){
+ .about-grid{ grid-template-columns:1fr; }
+ .header-inner{ flex-direction:column; gap:8px; align-items:flex-start; }
+ .global-nav{ display:flex; gap:8px; flex-wrap:wrap; }
+}

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>レシピファインダー | Recipe Finder</title>
+    <link rel="stylesheet" href="./styles/recipeFinder.css"/>
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-bowl-food"></i>
+            <h1>レシピファインダー</h1>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a href="./recipeFinder.html">ホーム</a></li>
+                <li><a href="./recipeCollection.html" id="collectionBtn">レシピカート</a></li>
+                <li><a href="./login.html">ログイン</a></li>
+                <li><a href="./signUp.html">サインアップ</a></li>
+                <li><a href="./contact.html">お問い合わせ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="intro">
+            <h2>レシピを探そう！</h2>
+            <p>人気の和食や定番料理を簡単に検索できます！</p>
+            <div class="search-area">
+                <input type="text" id="search" placeholder="料理名で検索(例:唐揚げ、たこ焼き...)" />
+                <button id="searchBtn">検索</button>
+            </div>
+        </section>
+
+        <section class="about-info">
+            <h3>レシピファインダーとは？</h3>
+            <p>レシピファインダーは、初心者でも簡単に作れる人気の日本料理を見つけることができるサイトです。</p>
+            <p><a href="./about.html">詳しくはこちら &raquo;</a></p>
+        </section>
+
+        <section class="popular-recipes">
+            <h3>人気レシピ</h3>
+            <div class="recipes-grid" id="recipeList">
+                <!-- お好み焼き -->
+                <div class="recipe-card" data-recipe="okonomiyaki">
+                    <img src="./images/Image (4).jpg" alt="お好み焼き" />
+                    <div class="recipe-info">
+                        <a href="#" class="recipe-link">お好み焼き</a>
+                        <span>調理時間:20分</span>
+                    </div>
+                    <div>
+                        <button class="favorite-btn" data-name="お好み焼き" data-img="./images/Image (4).jpg">
+                            お気に入り
+                        </button>
+                    </div>
+                </div>
+
+                <!-- たこ焼き -->
+                <div class="recipe-card" data-recipe="takoyaki">
+                    <img src="./images/Image (5).jpg" alt="たこ焼き" />
+                    <div class="recipe-info">
+                        <a href="#" class="recipe-link">たこ焼き</a>
+                        <span>調理時間:35分</span>
+                    </div>
+                    <div>
+                        <button class="favorite-btn" data-name="たこ焼き" data-img="./images/Image (5).jpg">
+                            お気に入り
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 牛丼 -->
+                <div class="recipe-card" data-recipe="gyudon">
+                    <img src="./images/Image.png" alt="牛丼" />
+                    <div class="recipe-info">
+                        <a href="#" class="recipe-link">牛丼</a>
+                        <span>調理時間:20分</span>
+                    </div>
+                    <div>
+                        <button class="favorite-btn" data-name="牛丼" data-img="./images/Image.png">
+                            お気に入り
+                        </button>
+                    </div>
+                </div>
+
+                <!-- とんかつ -->
+                <div class="recipe-card" data-recipe="tonkatsu">
+                    <img src="./images/Image (7).jpg" alt="とんかつ" />
+                    <div class="recipe-info">
+                        <a href="#" class="recipe-link">とんかつ</a>
+                        <span>調理時間:25分</span>
+                    </div>
+                    <div>
+                        <button class="favorite-btn" data-name="とんかつ" data-img="./images/Image (7).jpg">
+                            お気に入り
+                        </button>
+                    </div>
+                </div>
+
+                <!-- カレーライス -->
+                <div class="recipe-card" data-recipe="curry">
+                    <img src="./images/Image (8).jpg" alt="カレーライス" />
+                    <div class="recipe-info">
+                        <a href="#" class="recipe-link">カレーライス</a>
+                        <span>調理時間:90分</span>
+                    </div>
+                    <div>
+                        <button class="favorite-btn" data-name="カレーライス" data-img="./images/Image (8).jpg">
+                            お気に入り
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 焼き鳥 -->
+                <div class="recipe-card" data-recipe="yakitori">
+                    <img src="./images/Image (9).jpg" alt="焼き鳥" />
+                    <div class="recipe-info">
+                        <a href="#" class="recipe-link">焼き鳥</a>
+                        <span>調理時間:25分</span>
+                    </div>
+                    <div>
+                        <button class="favorite-btn" data-name="焼き鳥" data-img="./images/Image (9).jpg">
+                            お気に入り
+                        </button>
+                    </div>
+                </div>
+
+            </div>
+
+            <h3>和食</h3>
+            <p>
+                和食は、日本の四季と自然が生んだ豊かな食文化です。春には山菜、夏には涼しげなそうめん、秋には香り高いキノコ、冬には温かい鍋料理など、季節ごとの食材を大切にするのが特徴です。また、昆布やかつお節から取る「だし」を中心に、素材の味を活かす調理が多く、油や香辛料をあまり使わないため、体にも優しいと言われています。さらに、一汁三菜に代表されるように栄養バランスが良いのも和食の魅力です。見た目にも美しく、器や盛り付けにも季節の心を込めることで、食べる人の心を豊かにしてくれます。和食は、ただお腹を満たすだけでなく、自然への感謝や食への敬意が息づく、日本が誇る食文化だと私は思います。
+            </p>
+            <br>
+            <div class="recipes-grid" id="recipeList">
+                <!-- お好み焼き -->
+                <div class="recipe-card" data-recipe="okonomiyaki">
+                    <img src="./images/Image (4).jpg" alt="お好み焼き" />
+                    <div class="recipe-info">
+                        <a href="#" class="recipe-link">お好み焼き</a>
+                        <span>調理時間:20分</span>
+                    </div>
+                    <div>
+                        <button class="favorite-btn" data-name="お好み焼き" data-img="./images/Image (4).jpg">
+                            お気に入り
+                        </button>
+                    </div>
+                </div>
+
+                <!-- たこ焼き -->
+                <div class="recipe-card" data-recipe="takoyaki">
+                    <img src="./images/Image (5).jpg" alt="たこ焼き" />
+                    <div class="recipe-info">
+                        <a href="#" class="recipe-link">たこ焼き</a>
+                        <span>調理時間:35分</span>
+                    </div>
+                    <div>
+                        <button class="favorite-btn" data-name="たこ焼き" data-img="./images/Image (5).jpg">
+                            お気に入り
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 牛丼 -->
+                <div class="recipe-card" data-recipe="gyudon">
+                    <img src="./images/Image.png" alt="牛丼" />
+                    <div class="recipe-info">
+                        <a href="#" class="recipe-link">牛丼</a>
+                        <span>調理時間:20分</span>
+                    </div>
+                    <div>
+                        <button class="favorite-btn" data-name="牛丼" data-img="./images/Image.png">
+                            お気に入り
+                        </button>
+                    </div>
+                </div>
+
+                <!-- とんかつ -->
+                <div class="recipe-card" data-recipe="tonkatsu">
+                    <img src="./images/Image (7).jpg" alt="とんかつ" />
+                    <div class="recipe-info">
+                        <a href="#" class="recipe-link">とんかつ</a>
+                        <span>調理時間:25分</span>
+                    </div>
+                    <div>
+                        <button class="favorite-btn" data-name="とんかつ" data-img="./images/Image (7).jpg">
+                            お気に入り
+                        </button>
+                    </div>
+                </div>
+
+                <!-- カレーライス -->
+                <div class="recipe-card" data-recipe="curry">
+                    <img src="./images/Image (8).jpg" alt="カレーライス" />
+                    <div class="recipe-info">
+                        <a href="#" class="recipe-link">カレーライス</a>
+                        <span>調理時間:90分</span>
+                    </div>
+                    <div>
+                        <button class="favorite-btn" data-name="カレーライス" data-img="./images/Image (8).jpg">
+                            お気に入り
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 焼き鳥 -->
+                <div class="recipe-card" data-recipe="yakitori">
+                    <img src="./images/Image (9).jpg" alt="焼き鳥" />
+                    <div class="recipe-info">
+                        <a href="#" class="recipe-link">焼き鳥</a>
+                        <span>調理時間:25分</span>
+                    </div>
+                    <div>
+                        <button class="favorite-btn" data-name="焼き鳥" data-img="./images/Image (9).jpg">
+                            お気に入り
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 餃子 -->
+                <div class="recipe-card" data-recipe="gyouza">
+                    <img src="./images/Image (10).jpg" alt="餃子" />
+                    <div class="recipe-info">
+                        <a href="#" class="recipe-link">餃子</a>
+                        <span>調理時間:45分</span>
+                    </div>
+                    <div>
+                        <button class="favorite-btn" data-name="餃子" data-img="./images/Image (10).jpg">
+                            お気に入り
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 唐揚げ -->
+                <div class="recipe-card" data-recipe="karaage">
+                    <img src="./images/Image (11).jpg" alt="唐揚げ" />
+                    <div class="recipe-info">
+                        <a href="#" class="recipe-link">唐揚げ</a>
+                        <span>調理時間:30分</span>
+                    </div>
+                    <div>
+                        <button class="favorite-btn" data-name="唐揚げ" data-img="./images/Image (11).jpg">
+                            お気に入り
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 天ぷら -->
+                <div class="recipe-card" data-recipe="tenpura">
+                    <img src="./images/Image (12).jpg" alt="天ぷら" />
+                    <div class="recipe-info">
+                        <a href="#" class="recipe-link">天ぷら</a>
+                        <span>調理時間:15分</span>
+                    </div>
+                    <div>
+                        <button class="favorite-btn" data-name="天ぷら" data-img="./images/Image (12).jpg">
+                            お気に入り
+                        </button>
+                    </div>
+                </div>
+
+                <!-- うどん -->
+                <div class="recipe-card" data-recipe="udon">
+                    <img src="./images/Image (13).jpg" alt="うどん" />
+                    <div class="recipe-info">
+                        <a href="#" class="recipe-link">うどん</a>
+                        <span>調理時間:15分</span>
+                    </div>
+                    <div>
+                        <button class="favorite-btn" data-name="うどん" data-img="./images/Image (13).jpg">
+                            お気に入り
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 焼きそば -->
+                <div class="recipe-card" data-recipe="yakisoba">
+                    <img src="./images/Image (14).jpg" alt="焼きそば" />
+                    <div class="recipe-info">
+                        <a href="#" class="recipe-link">焼きそば</a>
+                        <span>調理時間:30分</span>
+                    </div>
+                    <div>
+                        <button class="favorite-btn" data-name="焼きそば" data-img="./images/Image (14).jpg">
+                            お気に入り
+                        </button>
+                    </div>
+                </div>
+
+                <!-- オムライス -->
+                <div class="recipe-card" data-recipe="omuraisu">
+                    <img src="./images/Image (15).jpg" alt="オムライス" />
+                    <div class="recipe-info">
+                        <a href="#" class="recipe-link">オムライス</a>
+                        <span>調理時間:25分</span>
+                    </div>
+                    <div>
+                        <button class="favorite-btn" data-name="オムライス" data-img="./images/Image (15).jpg">
+                            お気に入り
+                        </button>
+                    </div>
+                </div>
+
+                <!-- チキン照り焼き -->
+                <div class="recipe-card" data-recipe="chikinteriyaki">
+                    <img src="./images/Image (1).png" alt="チキン照り焼き" />
+                    <div class="recipe-info">
+                        <a href="#" class="recipe-link">チキン照り焼き</a>
+                        <span>調理時間:25分</span>
+                    </div>
+                    <div>
+                        <button class="favorite-btn" data-name="チキン照り焼き" data-img="./images/Image (1).png">
+                            お気に入り
+                        </button>
+                    </div>
+                </div>
+
+                <!-- サーモン照り焼き -->
+                <div class="recipe-card" data-recipe="samonteriyaki">
+                    <img src="./images/Image (55).jpg" alt="サーモン照り焼き" />
+                    <div class="recipe-info">
+                        <a href="#" class="recipe-link">サーモン照り焼き</a>
+                        <span>調理時間:15分</span>
+                    </div>
+                    <div>
+                        <button class="favorite-btn" data-name="サーモン照り焼き" data-img="./images/Image (55).jpg">
+                            お気に入り
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 玉子焼き -->
+                <div class="recipe-card" data-recipe="tamagoyaki">
+                    <img src="./images/Image (5).png" alt="玉子焼き" />
+                    <div class="recipe-info">
+                        <a href="#" class="recipe-link">玉子焼き</a>
+                        <span>調理時間:10分</span>
+                    </div>
+                    <div>
+                        <button class="favorite-btn" data-name="玉子焼き" data-img="./images/Image (5).png">
+                            お気に入り
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ツナマヨおにぎり -->
+                <div class="recipe-card" data-recipe="tunamayoonigiri">
+                    <img src="./images/Image (2).png" alt="ツナマヨおにぎり" />
+                    <div class="recipe-info">
+                        <a href="#" class="recipe-link">ツナマヨおにぎり</a>
+                        <span>調理時間:15分</span>
+                    </div>
+                    <div>
+                        <button class="favorite-btn" data-name="ツナマヨおにぎり" data-img="./images/Image (2).png">
+                            お気に入り
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 親子丼 -->
+                <div class="recipe-card" data-recipe="oyakodon">
+                    <img src="./images/Image (3).png" alt="親子丼" />
+                    <div class="recipe-info">
+                        <a href="#" class="recipe-link">親子丼</a>
+                        <span>調理時間:15分</span>
+                    </div>
+                    <div>
+                        <button class="favorite-btn" data-name="親子丼" data-img="./images/Image (3).png">
+                            お気に入り
+                        </button>
+                    </div>
+                </div>
+
+                <!-- 卵かけご飯 -->
+                <div class="recipe-card" data-recipe="tamagokakegohan">
+                    <img src="./images/Image (4).png" alt="卵かけご飯" />
+                    <div class="recipe-info">
+                        <a href="#" class="recipe-link">卵かけご飯</a>
+                        <span>調理時間:5分</span>
+                    </div>
+                    <div>
+                        <button class="favorite-btn" data-name="卵かけご飯" data-img="./images/Image (4).png">
+                            お気に入り
+                        </button>
+                    </div>
+                </div>
+                    
+            </div>
+
+            <p id="noResult" class="no-result" style="display:none;">レシピが見つかりません。</p>
+        </section>
+    </main>
+
+    <footer>
+        <p><i class="fa-solid fa-utensils"></i> &copy; 2025 All Right Reserved レシピファインダー</p>
+        <p>By PHONE MYAT KYAW</p>
+    </footer>
+
+    <script src="./js/recipeFinder.js"></script>
+    <script src="./js/recipeCollection.js"></script>
+</body>
+</html>
