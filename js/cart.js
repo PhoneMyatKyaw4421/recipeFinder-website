@@ -81,7 +81,19 @@ function getRecipeKey(name) {
         '牛丼': 'gyudon',
         'とんかつ': 'tonkatsu',
         'カレーライス': 'curry',
-        '焼き鳥': 'yakitori'
+        '焼き鳥': 'yakitori',
+        '餃子': 'gyouza',
+        '唐揚げ': 'karaage',
+        '天ぷら': 'tenpura',
+        'うどん': 'udon',
+        '焼きそば': 'yakisoba',
+        'オムライス': 'omuraisu',
+        'チキン照り焼き': 'teriyakichikin',
+        'サーモン照り焼き': 'samonteriyaki',
+        '玉子焼き': 'tamagoyaki',
+        'ツナマヨおにぎり': 'tunamayoonigiri',
+        '親子丼': 'oyakodon',
+        '卵かけご飯': 'tamagokakegohan'
     };
     return recipeMap[name] || '';
 }
@@ -103,6 +115,7 @@ function showDeleteConfirmation(name, callback) {
             </div>
         </div>
     `;
+    
     
     // スタイル追加
     const style = document.createElement('style');
