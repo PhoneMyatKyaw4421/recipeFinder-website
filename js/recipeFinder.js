@@ -581,21 +581,56 @@ function searchRecipes() {
     noResult.style.display = hasResult ? 'none' : 'block';
 }
 
+function searchAndScroll() {
+    const searchTerm = searchInput.value.toLowerCase().trim();
+    let hasResult = false;
+    let firstMatchingCard = null;
+
+    recipeCards.forEach(card => {
+        const recipeName = card.getAttribute('data-recipe');
+        const recipe = recipeData[recipeName];
+        
+        if (recipe.name.toLowerCase().includes(searchTerm) || searchTerm === '') {
+            card.style.display = 'block';
+            hasResult = true;
+            // Store the first matching card
+            if (!firstMatchingCard && searchTerm !== '') {
+                firstMatchingCard = card;
+            }
+        } else {
+            card.style.display = 'none';
+        }
+    });
+
+    noResult.style.display = hasResult ? 'none' : 'block';
+    
+    // Scroll to the first matching recipe if found
+    if (firstMatchingCard) {
+        firstMatchingCard.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'center' 
+        });
+    }
+}
+
 // 検索イベントリスナー
 if (searchBtn) {
-    searchBtn.addEventListener('click', searchRecipes);
+    searchBtn.addEventListener('click', searchAndScroll);
 }
 
 if (searchInput) {
     searchInput.addEventListener('keyup', (e) => {
         if (e.key === 'Enter') {
+            searchAndScroll();
+        } else {
             searchRecipes();
         }
     });
+}
     
     // リアルタイム検索
     searchInput.addEventListener('input', searchRecipes);
-}
+
 
 // ========================================
 // モーダル表示機能
